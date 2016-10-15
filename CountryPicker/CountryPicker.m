@@ -230,9 +230,11 @@
 {
     if (!view)
     {
+        CGFloat x = pickerView.frame.origin.x;
+        
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 30)];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(35, 3, 245, 24)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(35 + x, 3, 245, 24)];
         label.backgroundColor = [UIColor clearColor];
         label.tag = 1;
         if (self.labelFont)
@@ -241,7 +243,7 @@
         }
         [view addSubview:label];
         
-        UIImageView *flagView = [[UIImageView alloc] initWithFrame:CGRectMake(3, 3, 24, 24)];
+        UIImageView *flagView = [[UIImageView alloc] initWithFrame:CGRectMake(3 + x, 3, 24, 24)];
         flagView.contentMode = UIViewContentModeScaleAspectFit;
         flagView.tag = 2;
         [view addSubview:flagView];
